@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            background-color: #c6c7c8;
+    
+        }
+        .nav{
+            height: 70px;
+            width: 1356px;
+            background-color: black;
+            display: flex;
+            
+            position: fixed;
+            top: 0px;
+            z-index: 12;
+            
+        }
+        .logo img{
+            color: white;
+            width: 100px;
+            height: 30px;
+            margin: 20px;
+            left: 15px;
+        }
+        .loc{
+            background-color: black;
+            width: 200px;
+            height: 30px;
+            font-size: 15px;
+            color: white;
+            display: flex;
+            justify-content: left;
+            left: 10px;
+            border-color: white; 
+            margin-top: 10px;
+            text-decoration: none;
+            gap: 10px;
+        }
+        .loc-img{
+            margin-bottom: 5px;
+        }
+        .add{
+            margin-left: 6px;
+            margin-top: -50px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        a:hover{
+          border-color: white;
+          border-radius: 5px;
+        }
+        .line-loc{
+            text-decoration: none;
+            color: white;
+            
+            width: 150px;
+            font-size: 12px;
+        }
+        
+       
+        .input-group{
+            position: absolute;
+            height: 20px;
+            border: none;
+            width: 500px;
+            left: 360px;
+            top: 12px;
+            display: flex;
+            
+    
+        }
+        .btns{
+            right: 20px;
+            width: 55px;
+            border: none;
+            height: 53px;
+            background-color: rgb(255, 136, 0);
+            border: 2px solid rgb(255, 136, 0);
+        }
+        .input-group img{
+            height: 20px;
+            width: 20px;
+    
+        }
+        .contry img{
+            height: 25px;
+            width: 25px;
+        }
+        .text{
+            text-decoration: none;
+        }
+        .info{
+            height: 30px;
+            width: 50px;
+            margin-left: 0px;
+        }
+        .cart img{
+            height: 35px;
+            width: 35px;
+        }
+        .btn{
+            position: absolute;
+            right: 420px;
+            width: 80px;
+            height: 40px;
+            top: 18px;
+            border-color: none;
+            text-decoration: none;
+        }
+        .btn img{
+            top: 6px;
+        }
+        .btn1{
+            position: absolute;
+            margin-left:550px;
+            top: 10px;
+            flex-direction: column;
+        }
+        .btn5{
+          height: 53px;
+          width: 50px;
+          border: none;
+          padding: 7px;
+          background-color: gray;
+          border-radius: 5px;
+        }
+        .form-control{
+          height: 52px;
+        }
+        .hello-move{
+            margin-left: 50px;
+        }
+        .click:hover{
+            border-color: white;
+            border-radius: 10px;
+        }
+        .orders{
+            position: absolute;
+            flex-direction: column;
+            right: 130px;
+            top: 15px;
+            height: 20px;
+            width: 70px;
+            gap: 10px;
+        }
+        .cart{
+            position: absolute;
+            left: 1250px;
+        }
+        .btnc{
+            
+            gap: 20px;
+    
+            margin: 10px;
+            top: 20px;
+    
+        }
+        .line-1{
+            top: -5px;
+            font-size: 14px;
+            
+        }
+        .line-2{
+            top: -10px;
+            font-size: 15px;
+        }
+        .mar{
+            top: 50px;
+            margin-left: 45px;
+            gap: 10px;
+        }
+        .home{
+            background-color: cornflowerblue;
+            max-width: 1380px;
+            height: 35px;
+            margin-top: 70px;
+            
+            justify-content: space-evenly;
+        }
+        .All{
+            align-items: center;
+            font-size: 18px;
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            
+        }
+        .all-bars{
+          gap: 8px;
+          justify-content: space-evenly;
+          align-items: center;
+        }
+        .all-move{
+          margin-left: 5px;
+          align-items: center;
+        }
+        .fresh{
+            align-items: center;
+            margin-left: 37px;
+            font-size: 15px;
+            color: white;
+            margin-top: -25px;
+            text-decoration: none;
+        }
+        .mx{
+            align-items: center;
+            margin-left: 60px;
+            font-size: 15px;
+            color: white;
+            text-decoration: none;
+            margin-top: -23px;
+        }
+        .sell{
+            align-items: center;
+            margin-left: 102px;
+            font-size: 15px;
+            margin-top: -21px;
+            text-decoration: none;
+            color: white;
+        }
+        .btsl{
+            align-items: center;
+            margin-left: 122px;
+            font-size: 15px;
+            margin-top: -23px;
+            text-decoration: none;
+            color: white;
+        }
+        .td{
+            align-items: center;
+            margin-left: 168px;
+            font-size: 15px;
+            margin-top: -22px;
+            text-decoration: none;
+            color: white;
+        }
+        .mo{
+            align-items: center;
+            margin-left: 222px;
+            font-size: 15px;
+            margin-top: -22px;
+            text-decoration: none;
+            color: white;
+        }
+        .cs{
+            align-items: center;
+            margin-left: 252px;
+            font-size: 15px;
+            margin-top: -22px;
+            text-decoration: none;
+            color: white;
+        }
+        .elec{
+            align-items: center;
+            margin-left: 320px;
+            font-size: 15px;
+            margin-top: -22px;
+            text-decoration: none;
+            color: white;
+        }
+        .hm{
+            align-items: center;
+            margin-left: 362px;
+            font-size: 15px;
+            margin-top: -22px;
+            text-decoration: none;
+            color: white;
+        }
+        .pr{
+            align-items: center;
+            margin-left: 426px;
+            font-size: 15px;
+            margin-top: -22px;
+            text-decoration: none;
+            color: white;
+        }
+        .ap{
+            align-items: center;
+            margin-left: 458px;
+            font-size: 15px;
+            margin-top: -22px;
+            text-decoration: none;
+            color: white;
+        }
+        .fs{
+            align-items: center;
+            margin-left: 508px;
+            font-size: 15px;
+            margin-top: -22px;
+            text-decoration: none;
+            color: white;
+        }
+        .nr{
+            align-items: center;
+            margin-left: 542px;
+            font-size: 15px;
+            margin-top: -22px;
+            text-decoration: none;
+            color: white;
+        }
+        .cm{
+            align-items: center;
+            margin-left: 595px;
+            font-size: 15px;
+            margin-top: -23px;
+            text-decoration: none;
+            color: white;
+        }
+        .update{
+            margin-left: 0px;
+        }
+        .carousel-slide{
+            height: 50px;
+            width: 100%;
+        }
+        .cards{
+            max-width: 300px;
+            max-height: 340px;
+            background-color: #dee2e6;
+            margin-bottom: -30px;
+            margin-left: 20px;
+            z-index: 2;
+            border-radius: 5px;
+            border-color: rgba(255, 255, 255, 0);
+        }
+        .cards img{
+            width: 130px;
+        }
+        
+        .cards p{
+            font-size: 12px;
+            color: black;
+        }
+        .card5 img{
+          width: 120px;
+          height: 82px;
+        }
+        .uppercards{
+            height: 360px;
+            display: flex;
+            margin-top: 10px;
+            background-color: #c6c7c8;
+            gap: 18px;
+        }
+        .tag{
+            font-size: 20px;
+            margin-left: 14px;
+        }
+        .topcard{
+            margin-top: 20px;
+            margin-left: 15px;
+            display: flex;
+            gap: 10px;
+        }
+        .bottomtag{
+            color: blue;
+            font-size: 15px;
+            margin-left: 14px;
+        }
+        .bottomcard{
+        margin-left: 15px;
+            display: flex;
+            gap: 10px;
+        }
+        .sign{
+            background-color: red;
+            max-width: 200px;
+            max-height: 150px;
+        }
+    </style>
+ 
+</head>
+<body>
+    <div class="nav">
+        
+            <div class="logo click">
+                <a href=""><img src="logo.png" alt=""></a>
+             </div>
+             <div class="loc click">
+                 <a href="#" class="loc-img"><img src="location.png" style="text-decoration: none; height: 50px;" alt="">
+                    <div class="add">
+                        <span class="mar" style="color: white; font-size: 10px;">Delivery to Hyderabad 500068</span>
+                    <span class="mar update" style="color: white;"><b style="margin-left: 53px;">Update location</b></span>
+                    </div>
+                 </a>
+             </div>
+             
+              
+              
+              
+              <div class="input-group ">
+                <button class="btn5 btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">All</button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action before</a></li>
+    <li><a class="dropdown-item" href="#">Another action before</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+                
+                <input type="text" class="form-control" aria-label="Text input with 2 dropdown buttons" placeholder="Search Amazon.in">
+                <button class="btns btn-outline-secondary" type="button" aria-expanded="false"><img src="search.png" alt=""></button>
+              </div>
+              <div class="contry text click" style="height: 30px;">
+                <a href="" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="flag.png"  alt="">
+                    <b style="color: white; border-color: none;">EN</b></a>
+              </div>
+              <div class="info click" style="height: 30px; width: 50px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                <div class="sign">
+                    <a href="#" class="btn1  btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style=" color: white; "><span class="hello-move">Hello, sign in</span> <br>
+                        <span class=" mar" style="color: white; "><b>Accounts & Lists</b></span></a>
+                </div>
+                
+              </div>
+              <div class="orders click">
+                <a href="#" class="line-1" style="width: 100px; height: 60px; gap: 5px; background-color:black; color:white;flex-direction:column; border-color: none; text-decoration: none;"><div class="line-ord"><span class="line-1">Return</span><br> <span><b class="line-2" style="color: white;">& Orders</b></span></div></a>
+                
+                </div>
+              <div class="cart click" style="top: 20px;">
+                <a href="#" class="btnc" style="background-color: black; color: white; border-color: none; text-decoration: none;"><img src="cart.png" alt=""><b>Cart</b></a>
+              </div>
+
+    </div>
+    <div class="home">
+        <div class="All">
+          <div class="all-bars"><span><a href="#"></a>
+            <i class="fa-solid fa-bars"><b class="all-move"></b></i>All</b></a></span>
+          </div>
+        </div>
+        <div class="fresh">
+            <span><a href="#"><b class="fresh">Fresh</b></a></span>
+        </div>
+        <div class="mx">
+           <span><a href="#"><b class="mx">MX Player</b></a></span> 
+        </div>
+        <div class="sell">
+           <span><a href="#"><b class="sell">Sell</b></a></span> 
+        </div>
+        <div class="btsl">
+           <span><a href="#"><b class="btsl">Best Sellers</b></a></span> 
+        </div>
+        <div class="td">
+           <span><a href="#"><b class="td">Today's Deals</b></a></span> 
+        </div>
+        <div class="mo">
+           <span><a href="#"><b class="mo">Mobile</b></a></span> 
+        </div>
+        <div class="cs">
+           <span><a href="#"><b class="cs">Customer Service</b></a></span> 
+        </div>
+        <div class="elec">
+           <span><a href="#"><b class="elec">Electronics</b></a></span> 
+        </div>
+        <div class="hm">
+           <span><a href="#"><b class="hm">Home & Kitchen</b></a></span> 
+        </div>
+        <div class="pr" style="top: 20px;">
+            <a href="#" class="pr  btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white; border-color: none; text-decoration: none;"><b>Prime</b></a>
+          </div>
+          <div class="ap">
+            <span><a href="#"><b class="ap">Amazon Pay</b></a></span> 
+         </div>
+          <div class="fs">
+            <span><a href="#"><b class="fs">Fashion</b></a></span> 
+         </div>
+          <div class="nr">
+            <span><a href="#"><b class="nr">New Releases</b></a></span> 
+         </div>
+          <div class="cm">
+            <span><a href="#"><b class="cm">Car & MotorBike</b></a></span> 
+         </div>
+
+    </div>
+    <div class="carousel-container">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="addamazon-2.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="addamazon2.png" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      <div class="uppercards" style="display: flex;">
+        <div class="cards">
+            <div class="tag">
+              <b>Explore more from Small Businesses</b>
+            </div>
+            <div class="topcard">
+              <div class="card1">
+                <img src="c11.jpg" alt="">
+                <p>Ethenic, dresses & more</p>
+              </div>
+              <div class="card2">
+                <img src="c12.jpg" alt="">
+                <p>Decors</p>
+              </div>
+            </div>
+            <div class="bottomcard">
+              <div class="card3">
+                <img src="c13.jpg" alt="">
+                <p>Fashion Accessories</p>
+              </div>
+              <div class="card4">
+                <img src="c14.jpg" alt="">
+                <p>Glassware & drinkware</p>
+              </div>
+            </div>
+            <div class="bottomtag">
+              <b>Explore All</b>
+            </div>
+        </div>
+        
+        <div class="cards">
+          <div class="tag">
+            <b>Automotive essentials | Up to 60% off</b>
+          </div>
+          <div class="topcard">
+            <div class="card1">
+              <img src="c21.jpg" alt="">
+              <p>Cleaning accessories</p>
+            </div>
+            <div class="card2">
+              <img src="c22.jpg" alt="">
+              <p>Tyre & rim care</p>
+            </div>
+          </div>
+          <div class="bottomcard">
+            <div class="card3">
+              <img src="c23.jpg" alt="">
+              <p>Helmets</p>
+            </div>
+            <div class="card4">
+              <img src="c24.jpg" alt="">
+              <p>Vacuum cleaner</p>
+            </div>
+          </div>
+          <div class="bottomtag">
+            <b>Explore All</b>
+          </div>
+        </div>
+        <div class="cards">
+            <div class="tag">
+              <b>Starting ₹149 | <br>Headphones</b>
+            </div>
+            <div class="topcard">
+              <div class="card1">
+                <img src="c31.jpg" alt="">
+                <p>Starting ₹249 | boAt</p>
+              </div>
+              <div class="card2 card5">
+                <img src="c32.jpg" alt="">
+                <p>Starting ₹349 | boult</p>
+              </div>
+            </div>
+            <div class="bottomcard">
+              <div class="card3">
+                <img src="c33.jpg" alt="">
+                <p>Starting ₹649 | Noise</p>
+              </div>
+              <div class="card4 card5">
+                <img src="c34.jpg" alt="">
+                <p>Starting ₹149 | Zebronics</p>
+              </div>
+            </div>
+            <div class="bottomtag">
+              <b>Explore All</b>
+            </div>
+          </div>
+          <div class="cards">
+            <div class="tag">
+              <b>Appliances for your home | Up to 55% off</b>
+            </div>
+            <div class="topcard">
+              <div class="card1">
+                <img src="c41.jpg" alt="">
+                <p>AC conditioner</p>
+              </div>
+              <div class="card2">
+                <img src="c42.jpg" alt="">
+                <p>Refrigrator</p>
+              </div>
+            </div>
+            <div class="bottomcard">
+              <div class="card3">
+                <img src="c43.jpg" alt="">
+                <p>Microwaves</p>
+              </div>
+              <div class="card4">
+                <img src="c44.jpg" alt="">
+                <p>Washing Machine</p>
+              </div>
+            </div>
+            <div class="bottomtag">
+              <b>Explore All</b>
+            </div>
+          </div>
+          
+        </div>
+          
+        
+        
+        
+        
+      </div>
+      <div class="uppercards" style="display: flex;">
+        <div class="cards">
+            <div class="tag">
+              <b>Explore more from Small Businesses</b>
+            </div>
+            <div class="topcard">
+              <div class="card1">
+                <img src="c11.jpg" alt="">
+                <p>Ethenic, dresses & more</p>
+              </div>
+              <div class="card2">
+                <img src="c12.jpg" alt="">
+                <p>Decors</p>
+              </div>
+            </div>
+            <div class="bottomcard">
+              <div class="card3">
+                <img src="c13.jpg" alt="">
+                <p>Fashion Accessories</p>
+              </div>
+              <div class="card4">
+                <img src="c14.jpg" alt="">
+                <p>Glassware & drinkware</p>
+              </div>
+            </div>
+            <div class="bottomtag">
+              <b>Explore All</b>
+            </div>
+        </div>
+        
+        <div class="cards">
+          <div class="tag">
+            <b>Automotive essentials | Up to 60% off</b>
+          </div>
+          <div class="topcard">
+            <div class="card1">
+              <img src="c21.jpg" alt="">
+              <p>Cleaning accessories</p>
+            </div>
+            <div class="card2">
+              <img src="c22.jpg" alt="">
+              <p>Tyre & rim care</p>
+            </div>
+          </div>
+          <div class="bottomcard">
+            <div class="card3">
+              <img src="c23.jpg" alt="">
+              <p>Helmets</p>
+            </div>
+            <div class="card4">
+              <img src="c24.jpg" alt="">
+              <p>Vacuum cleaner</p>
+            </div>
+          </div>
+          <div class="bottomtag">
+            <b>Explore All</b>
+          </div>
+        </div>
+        <div class="cards">
+            <div class="tag">
+              <b>Starting ₹149 | <br>Headphones</b>
+            </div>
+            <div class="topcard">
+              <div class="card1">
+                <img src="c31.jpg" alt="">
+                <p>Starting ₹249 | boAt</p>
+              </div>
+              <div class="card2 card5">
+                <img src="c32.jpg" alt="">
+                <p>Starting ₹349 | boult</p>
+              </div>
+            </div>
+            <div class="bottomcard">
+              <div class="card3">
+                <img src="c33.jpg" alt="">
+                <p>Starting ₹649 | Noise</p>
+              </div>
+              <div class="card4 card5">
+                <img src="c34.jpg" alt="">
+                <p>Starting ₹149 | Zebronics</p>
+              </div>
+            </div>
+            <div class="bottomtag">
+              <b>Explore All</b>
+            </div>
+          </div>
+          <div class="cards">
+            <div class="tag">
+              <b>Appliances for your home | Up to 55% off</b>
+            </div>
+            <div class="topcard">
+              <div class="card1">
+                <img src="c41.jpg" alt="">
+                <p>AC conditioner</p>
+              </div>
+              <div class="card2">
+                <img src="c42.jpg" alt="">
+                <p>Refrigrator</p>
+              </div>
+            </div>
+            <div class="bottomcard">
+              <div class="card3">
+                <img src="c43.jpg" alt="">
+                <p>Microwaves</p>
+              </div>
+              <div class="card4">
+                <img src="c44.jpg" alt="">
+                <p>Washing Machine</p>
+              </div>
+            </div>
+            <div class="bottomtag">
+              <b>Explore All</b>
+            </div>
+          </div>
+          
+        </div>
+        </div>
+      </div>
+
+
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="addamazon-2.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="addamazon2.png" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+  
+      
+     
+        
+      
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</body>
+</html>
